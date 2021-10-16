@@ -2,7 +2,7 @@ version: '2'
 
 services:
 
-  mp-fwd:
+  mpfwd:
     build: ./mp-fwd
     privileged: true
     network_mode: host 
