@@ -2,14 +2,16 @@ version: '2'
 
 services:
 
-  mpfwd:
+  mp-fwd:
     build: ./mp-fwd
     privileged: true
+    network_mode: host 
     volumes:
       - 'pktfwdr:/var/pktfwd'
 
   gatewayrs:
     build: ./hm-gatewayrs
+    network_mode: host
     expose:
       - "1680"   
     # ports:
