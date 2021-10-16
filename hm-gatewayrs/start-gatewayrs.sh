@@ -3,6 +3,8 @@
 rm -f settings.toml
 rm -f /etc/helium_gateway/settings.toml
 
+echo 'listen_addr = "127.0.0.1:1680"' >> settings.toml
+
 if [[ -v REGION_OVERRIDE ]]
 then
   echo 'region = "'"${REGION_OVERRIDE}\"" >> settings.toml

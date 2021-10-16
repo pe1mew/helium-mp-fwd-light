@@ -2,6 +2,7 @@ version: '2'
 
 services:
 
+  # client
   mpfwd:
     build: ./mp-fwd
     privileged: true
@@ -9,13 +10,12 @@ services:
     volumes:
       - 'pktfwdr:/var/pktfwd'
 
+  # "server"
   gatewayrs:
     build: ./hm-gatewayrs
     network_mode: host
     expose:
       - "1680"   
-    # ports:
-    #   - "1680:1680/udp"
     volumes:
       - 'miner-storage:/var/data'
       - 'miner-log:/var/log/miner'
