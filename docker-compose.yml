@@ -2,7 +2,7 @@ version: '2'
 
 services:
 
-  mp-fwd:
+  mpfwd:
     build: ./mp-fwd
     privileged: true
     volumes:
@@ -10,10 +10,10 @@ services:
 
   gatewayrs:
     build: ./hm-gatewayrs
-    # expose:
-    #   - "1680"   
-    ports:
-      - "1680:1680/udp"
+    expose:
+      - "1680"   
+    # ports:
+    #   - "1680:1680/udp"
     volumes:
       - 'miner-storage:/var/data'
       - 'miner-log:/var/log/miner'
